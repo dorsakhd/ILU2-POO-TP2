@@ -27,7 +27,7 @@ public class BoundaryEmmenager {
 					break;
 
 				case 2:
-					//TODO a completer
+					emmenagerGaulois(nomVisiteur);
 					break;
 
 				default:
@@ -40,6 +40,40 @@ public class BoundaryEmmenager {
 	}
 
 	private void emmenagerDruide(String nomVisiteur) {
-		//TODO a completer
+		 souhaiterBienvenue(nomVisiteur);
+		
+		int force = demanderForce();
+		int effetPotionMinimum = demanderEffetPotionMinimum();
+		int effetPotionMaximum = demanderEffetPotionMaximum();
+		
+		controlEmmenager.ajouterDruide(nomVisiteur, force, effetPotionMinimum, effetPotionMaximum);
 	}
+	
+	private void emmenagerGaulois(String nomVisiteur) {		
+		this.souhaiterBienvenue(nomVisiteur);
+		
+		int force = demanderForce();
+		
+		controlEmmenager.ajouterGaulois(nomVisiteur, force);
+	}
+	
+	
+	private void souhaiterBienvenue(String nom) {
+		System.out.println("Bienvenue villageois " + nom + ".");
+	}
+	
+	
+	private int demanderForce() {
+		return Clavier.entrerEntier("Quelle est votre force ? : ");
+	}
+	
+	private int demanderEffetPotionMinimum() {
+		return Clavier.entrerEntier("Quelle est la force de potion la plus faible que vous produisez ?");
+	}
+	
+	private int demanderEffetPotionMaximum() {
+		return Clavier.entrerEntier("Quelle est la force de potion la plus forte que vous produisez ?");
+	}
+	
 }
+
