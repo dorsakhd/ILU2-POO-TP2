@@ -14,12 +14,12 @@ public class ControlPrendreEtal {
 	}
 
 	public boolean resteEtals() {
-		 return this.village.rechercherEtalVide();
+		 return village.rechercherEtalVide();
 	}
 
 	public int prendreEtal(String nomVendeur, String produit, int nbProduit) {
-		Gaulois vendeur = this.village.trouverHabitant(produit);
-		return this.village.installerVendeur(vendeur, produit, nbProduit);
+		Gaulois vendeur = village.trouverHabitant(nomVendeur);
+		return village.installerVendeur(vendeur, produit, nbProduit);
 	}
 
 	public boolean verifierIdentite(String nomVendeur) {
