@@ -1,7 +1,5 @@
 package frontiere;
 
-import java.util.Scanner;
-
 import controleur.ControlPrendreEtal;
 
 public class BoundaryPrendreEtal {
